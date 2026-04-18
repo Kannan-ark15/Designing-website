@@ -1,44 +1,87 @@
 import { motion } from 'motion/react';
 
+const socials = [
+  { label: 'Twitter', icon: '🐦' },
+  { label: 'Instagram', icon: '📸' },
+  { label: 'Behance', icon: '💼' },
+  { label: 'Dribbble', icon: '🎨' },
+];
+
 export default function Contact() {
   return (
     <>
-      <div className="diagonal-divider bg-[var(--red)]"></div>
-      <section id="contact" className="bg-[var(--red)] px-8 py-20 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.15)_2px,transparent_2px)] bg-[length:16px_16px]"></div>
+      <div className="diagonal-divider" style={{ background: 'var(--red)' }} />
+      <section
+        id="contact"
+        className="bg-[var(--red)] px-6 md:px-12 py-24 text-center relative overflow-hidden"
+      >
+        <div className="absolute inset-0 halftone-light pointer-events-none" />
 
-        <div className="absolute top-[10%] left-[5%] text-5xl pointer-events-none animate-[wiggle_2s_infinite]">⭐</div>
-        <div className="absolute top-[15%] right-[8%] text-4xl pointer-events-none animate-[wiggle_2.5s_infinite_0.5s]">💥</div>
-        <div className="absolute bottom-[15%] left-[10%] text-4xl pointer-events-none animate-[wiggle_2s_infinite_1s]">⚡</div>
+        <div className="absolute top-[8%] left-[6%] text-4xl pointer-events-none animate-[wiggle_2.2s_ease-in-out_infinite]">⭐</div>
+        <div className="absolute top-[12%] right-[7%] text-3xl pointer-events-none animate-[wiggle_2.5s_ease-in-out_infinite_0.4s]">💥</div>
+        <div className="absolute bottom-[12%] left-[9%] text-3xl pointer-events-none animate-[wiggle_2s_ease-in-out_infinite_0.8s]">⚡</div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center pt-12 pb-4 relative z-10"
+          viewport={{ once: true }}
+          className="relative z-10 mb-10"
         >
-          <div className="boom-label" data-text="LET'S TALK" style={{ WebkitTextStroke: 'unset', color: 'var(--white)' }}>LET'S TALK</div>
+          <span className="comic-tag sky inline-block mb-5">Get In Touch</span>
+          <h2
+            style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 900 }}
+            className="text-white text-5xl md:text-7xl tracking-tight leading-none"
+          >
+            Let's Talk
+          </h2>
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="relative z-10 max-w-2xl mx-auto my-8 text-center"
+          viewport={{ once: true }}
+          className="relative z-10 max-w-2xl mx-auto"
         >
-          <div className="contact-bubble">
-            <div className="font-heading text-3xl md:text-5xl tracking-widest text-[var(--black)] mb-2">LET'S WORK TOGETHER! 🤝</div>
-            <p className="text-lg text-gray-800 mb-6">Got a project in mind? Drop me a line and let's make something unforgettable.</p>
-            <a href="mailto:hello@powdesign.co" className="font-heading text-2xl tracking-widest text-[var(--red)] no-underline block mb-6 transition-colors duration-150 hover:text-[var(--blue)]">hello@powdesign.co</a>
-            <div className="flex gap-4 justify-center flex-wrap mt-4">
-              <a href="#" className="inline-flex items-center gap-1.5 font-heading text-base tracking-wider px-4 py-2 border-[var(--outline)] bg-[var(--black)] text-[var(--white)] no-underline transition-all duration-150 cursor-none hover:bg-[var(--yellow)] hover:text-[var(--black)] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,0.4)]">🐦 TWITTER</a>
-              <a href="#" className="inline-flex items-center gap-1.5 font-heading text-base tracking-wider px-4 py-2 border-[var(--outline)] bg-[var(--black)] text-[var(--white)] no-underline transition-all duration-150 cursor-none hover:bg-[var(--yellow)] hover:text-[var(--black)] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,0.4)]">📸 INSTAGRAM</a>
-              <a href="#" className="inline-flex items-center gap-1.5 font-heading text-base tracking-wider px-4 py-2 border-[var(--outline)] bg-[var(--black)] text-[var(--white)] no-underline transition-all duration-150 cursor-none hover:bg-[var(--yellow)] hover:text-[var(--black)] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,0.4)]">💼 BEHANCE</a>
-              <a href="#" className="inline-flex items-center gap-1.5 font-heading text-base tracking-wider px-4 py-2 border-[var(--outline)] bg-[var(--black)] text-[var(--white)] no-underline transition-all duration-150 cursor-none hover:bg-[var(--yellow)] hover:text-[var(--black)] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,0.4)]">🎨 DRIBBBLE</a>
+          <div className="contact-bubble text-left">
+            <h3
+              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 900 }}
+              className="text-2xl md:text-3xl tracking-tight text-[var(--ink)] mb-2"
+            >
+              Let's Work Together 🤝
+            </h3>
+            <p
+              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}
+              className="text-sm text-gray-700 mb-5"
+            >
+              Got a project in mind? Drop me a line and let's make something unforgettable.
+            </p>
+            <a
+              href="mailto:hello@powdesign.co"
+              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}
+              className="text-lg text-[var(--red)] no-underline block mb-6 hover:text-[var(--blue)] transition-colors"
+            >
+              hello@powdesign.co
+            </a>
+
+            <div className="flex gap-3 flex-wrap mb-6">
+              {socials.map(({ label, icon }) => (
+                <a
+                  key={label}
+                  href="#"
+                  style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}
+                  className="inline-flex items-center gap-1.5 text-xs tracking-wide uppercase px-4 py-2 border-[2.5px] border-[var(--ink)] bg-[var(--ink)] text-[var(--white)] no-underline transition-all duration-150 hover:bg-[var(--yellow)] hover:text-[var(--ink)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
+                >
+                  {icon} {label}
+                </a>
+              ))}
             </div>
-            <div className="mt-6">
-              <a href="#" className="font-heading text-2xl tracking-widest bg-[var(--red)] text-[var(--white)] border-[var(--outline-thick)] px-9 py-3.5 cursor-none transition-all duration-150 shadow-[6px_6px_0_var(--black)] mt-4 inline-block hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0_var(--black)] hover:bg-[var(--blue)]">SEND A MESSAGE →</a>
-            </div>
+
+            <a
+              href="#"
+              className="comic-btn primary w-full text-center block"
+            >
+              Send a Message →
+            </a>
           </div>
         </motion.div>
       </section>

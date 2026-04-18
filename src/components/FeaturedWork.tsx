@@ -1,53 +1,69 @@
 import { motion } from 'motion/react';
 
 const panels = [
-  { id: 1, bg: '#E63946', emoji: '🔥', title: 'FIRE SERIES\nDROP NO.1', caption: 'Poster Print · 18×24"', pop: 'POP!' },
-  { id: 2, bg: '#FFD60A', emoji: '🌊', title: 'WAVE CULTURE\nTEE DESIGN', caption: 'T-Shirt Graphic · 2024', pop: 'WOW!', darkText: true },
-  { id: 3, bg: '#4CC9F0', emoji: '⚡', title: 'ELECTRIC\nSIGNAL', caption: 'Brand Identity Kit', pop: 'ZAP!' },
-  { id: 4, bg: '#1D3557', emoji: '🌙', title: 'MIDNIGHT\nCOLLECTIVE', caption: 'Apparel Collection', pop: 'BOOM!' },
-  { id: 5, bg: '#E63946', emoji: '🦋', title: 'FLUTTER\nCAMPAIGN', caption: 'Ad Campaign · 2025', pop: 'POW!', pattern: 'radial-gradient(circle, rgba(255,255,255,0.3) 2px, transparent 2px)' },
-  { id: 6, bg: '#FFD60A', emoji: '🎯', title: 'BULLSEYE\nBRAND PACK', caption: 'Logo + Print · 2025', pop: 'YOW!', pattern: 'radial-gradient(circle, rgba(0,0,0,0.2) 2px, transparent 2px)', darkText: true },
+  { id: 1, bg: '#D63031', textColor: '#FFFFFF', emoji: '🔥', title: 'Fire Series', sub: 'Poster Print · 18×24"', pop: 'POP!' },
+  { id: 2, bg: '#FDCB6E', textColor: '#0A0A0A', emoji: '🌊', title: 'Wave Culture', sub: 'T-Shirt Graphic · 2024', pop: 'WOW!' },
+  { id: 3, bg: '#74B9FF', textColor: '#0A0A0A', emoji: '⚡', title: 'Electric Signal', sub: 'Brand Identity Kit', pop: 'ZAP!' },
+  { id: 4, bg: '#2D3436', textColor: '#FFFFFF', emoji: '🌙', title: 'Midnight Co.', sub: 'Apparel Collection', pop: 'BOOM!' },
+  { id: 5, bg: '#D63031', textColor: '#FFFFFF', emoji: '🦋', title: 'Flutter Campaign', sub: 'Ad Campaign · 2025', pop: 'POW!' },
+  { id: 6, bg: '#FDCB6E', textColor: '#0A0A0A', emoji: '🎯', title: 'Bullseye Brand', sub: 'Logo + Print · 2025', pop: 'YOW!' },
 ];
 
 export default function FeaturedWork() {
   return (
     <>
-      <div className="diagonal-divider"></div>
-      <section id="featured" className="bg-[var(--white)] px-8 py-16">
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
+      <div className="diagonal-divider" />
+      <section id="featured" className="bg-[var(--white)] px-6 md:px-12 py-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center pt-12 pb-4 relative"
+          viewport={{ once: true }}
+          className="max-w-6xl mx-auto mb-12"
         >
-          <div className="boom-label" data-text="FEATURED DESIGNS">FEATURED DESIGNS</div>
-          <p className="font-sans text-lg text-gray-600 mt-2">Click any panel to view the full drop →</p>
+          <h2 className="section-title">
+            <span>Featured Designs</span>
+          </h2>
+          <p
+            style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}
+            className="text-[var(--muted-foreground)] mt-4 text-base"
+          >
+            Hover any panel to reveal the drop →
+          </p>
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 border-[var(--outline-thick)] max-w-6xl mx-auto mt-8"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 border-[4px] border-[var(--ink)] max-w-6xl mx-auto"
         >
           {panels.map((panel) => (
-            <div key={panel.id} className="comic-panel group">
-              <div 
-                className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden"
-                style={{ 
-                  backgroundColor: panel.bg,
-                  backgroundImage: panel.pattern,
-                  backgroundSize: panel.pattern ? '10px 10px' : undefined
-                }}
-              >
-                <div className="pop-effect group-hover:opacity-100 group-hover:scale-100">{panel.pop}</div>
-                <span className="text-[5rem] z-10 drop-shadow-[4px_4px_0_rgba(0,0,0,0.4)]">{panel.emoji}</span>
-                <div className={`font-heading text-2xl tracking-widest text-center px-4 z-10 mt-2 whitespace-pre-line ${panel.darkText ? 'text-[var(--black)] drop-shadow-[2px_2px_0_rgba(0,0,0,0.2)]' : 'text-[var(--white)] drop-shadow-[3px_3px_0_var(--black)]'}`}>
+            <div
+              key={panel.id}
+              className="comic-panel aspect-[3/4] border-[3px] border-[var(--ink)]"
+              style={{ backgroundColor: panel.bg }}
+            >
+              <div className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden halftone-light">
+                <span className="pop-effect">{panel.pop}</span>
+                <span className="text-[4.5rem] z-10 select-none drop-shadow-[3px_3px_0_rgba(0,0,0,0.35)]">
+                  {panel.emoji}
+                </span>
+                <p
+                  style={{
+                    fontFamily: "'Poppins', sans-serif",
+                    fontWeight: 800,
+                    color: panel.textColor,
+                  }}
+                  className="text-xl tracking-tight text-center z-10 mt-3 px-4 leading-tight"
+                >
                   {panel.title}
-                </div>
+                </p>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-[var(--black)] text-[var(--white)] font-heading text-sm tracking-wider px-3 py-1.5 text-center">
-                {panel.caption}
+              <div
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}
+                className="absolute bottom-0 left-0 right-0 bg-[var(--ink)] text-[var(--white)] text-xs tracking-widest uppercase px-3 py-2 text-center"
+              >
+                {panel.sub}
               </div>
             </div>
           ))}

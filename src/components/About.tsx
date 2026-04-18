@@ -1,70 +1,102 @@
 import { motion } from 'motion/react';
 
+const story = [
+  { n: '01', icon: '👶', bg: 'var(--sky)', color: 'var(--ink)', title: 'The Origin', text: 'Grew up with markers in hand and walls as canvases. Fell in love with color before I could spell "design."' },
+  { n: '02', icon: '🎓', bg: 'var(--yellow)', color: 'var(--ink)', title: 'The Training', text: 'Studied Graphic Design and never stopped learning. Mastered Illustrator, Photoshop, and the art of the perfect typeface pairing.' },
+  { n: '03', icon: '💥', bg: 'var(--red)', color: '#FFFFFF', title: 'The Mission', text: 'Making brands impossible to ignore. Every project is a visual punch — bold, memorable, built to last.' },
+  { n: '04', icon: '🚀', bg: 'var(--blue)', color: '#FFFFFF', title: "What's Next", text: "Dropping new collections, collabs, and client projects monthly. The studio never sleeps. Let's build something legendary." },
+];
+
+const stats = [
+  { n: '120+', label: 'Projects Done', bg: 'var(--yellow)', color: 'var(--ink)' },
+  { n: '48', label: 'Happy Clients', bg: 'var(--red)', color: '#FFFFFF' },
+  { n: '7+', label: 'Years Exp.', bg: 'var(--sky)', color: 'var(--ink)' },
+];
+
 export default function About() {
   return (
     <>
-      <div className="diagonal-divider-rev"></div>
-      <section id="about" className="bg-[var(--white)] px-8 py-16 relative border-t-[var(--outline-thick)] border-b-[var(--outline-thick)]">
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
+      <div className="diagonal-divider-rev" />
+      <section id="about" className="bg-[var(--white)] px-6 md:px-12 py-20 relative border-t-[4px] border-b-[4px] border-[var(--ink)]">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center pt-12 pb-4 relative"
+          viewport={{ once: true }}
+          className="max-w-6xl mx-auto mb-12"
         >
-          <div className="boom-label" data-text="MY STORY">MY STORY</div>
-          <p className="font-sans text-gray-600 mt-2">Life told in panels — like every good story should be</p>
+          <span className="comic-tag mb-4 inline-block">My Story</span>
+          <h2 className="section-title">
+            <span>Life in Panels</span>
+          </h2>
+          <p
+            style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}
+            className="text-[var(--muted-foreground)] mt-4 text-sm"
+          >
+            Every good story is told in panels.
+          </p>
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border-[var(--outline-thick)] max-w-6xl mx-auto mt-8"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-[4px] border-[var(--ink)] max-w-6xl mx-auto"
         >
-          <div className="border-[var(--outline-thick)] p-6 md:p-8 relative overflow-hidden transition-transform duration-200 hover:scale-[1.03] hover:z-10 bg-[var(--sky)]">
-            <span className="absolute top-2 right-3 font-heading text-3xl text-black/15 tracking-wider">01</span>
-            <span className="text-5xl block mb-4">👶</span>
-            <div className="font-heading text-2xl tracking-widest mb-2">THE ORIGIN</div>
-            <p className="text-[0.95rem] leading-relaxed">Grew up with markers in hand and walls as canvases. Fell in love with color before I could spell "design."</p>
-          </div>
-          <div className="border-[var(--outline-thick)] p-6 md:p-8 relative overflow-hidden transition-transform duration-200 hover:scale-[1.03] hover:z-10 bg-[var(--yellow)]">
-            <span className="absolute top-2 right-3 font-heading text-3xl text-black/15 tracking-wider">02</span>
-            <span className="text-5xl block mb-4">🎓</span>
-            <div className="font-heading text-2xl tracking-widest mb-2">THE TRAINING</div>
-            <p className="text-[0.95rem] leading-relaxed">Studied Graphic Design and never stopped learning. Mastered Illustrator, Photoshop, and the art of the perfect typeface pairing.</p>
-          </div>
-          <div className="border-[var(--outline-thick)] p-6 md:p-8 relative overflow-hidden transition-transform duration-200 hover:scale-[1.03] hover:z-10 bg-[var(--red)]">
-            <span className="absolute top-2 right-3 font-heading text-3xl text-black/15 tracking-wider">03</span>
-            <span className="text-5xl block mb-4">💥</span>
-            <div className="font-heading text-2xl tracking-widest mb-2">THE MISSION</div>
-            <p className="text-[0.95rem] leading-relaxed">Making brands impossible to ignore. Every project is a visual punch — bold, memorable, built to last.</p>
-          </div>
-          <div className="border-[var(--outline-thick)] p-6 md:p-8 relative overflow-hidden transition-transform duration-200 hover:scale-[1.03] hover:z-10 bg-[var(--blue)] text-[var(--white)]">
-            <span className="absolute top-2 right-3 font-heading text-3xl text-white/15 tracking-wider">04</span>
-            <span className="text-5xl block mb-4">🚀</span>
-            <div className="font-heading text-2xl tracking-widest mb-2">WHAT'S NEXT</div>
-            <p className="text-[0.95rem] leading-relaxed text-white/85">Dropping new collections, collabs, and client projects monthly. The studio never sleeps. Let's build something legendary.</p>
-          </div>
+          {story.map((s) => (
+            <div
+              key={s.n}
+              className="border-[3px] border-[var(--ink)] p-6 md:p-8 relative overflow-hidden transition-transform duration-200 hover:scale-[1.02] hover:z-10"
+              style={{ background: s.bg, color: s.color }}
+            >
+              <span
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 900, opacity: 0.12 }}
+                className="absolute top-2 right-3 text-4xl"
+              >
+                {s.n}
+              </span>
+              <span className="text-5xl block mb-4 select-none">{s.icon}</span>
+              <p
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800 }}
+                className="text-xl tracking-tight mb-2"
+              >
+                {s.title}
+              </p>
+              <p
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, opacity: 0.85 }}
+                className="text-sm leading-relaxed"
+              >
+                {s.text}
+              </p>
+            </div>
+          ))}
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="flex justify-center gap-8 flex-wrap mt-12"
+          viewport={{ once: true }}
+          className="flex justify-center gap-6 flex-wrap mt-14 max-w-6xl mx-auto"
         >
-          <div className="text-center border-4 border-[var(--black)] px-8 py-6 bg-[var(--yellow)] shadow-[6px_6px_0_var(--black)]">
-            <div className="font-heading text-5xl tracking-widest">120+</div>
-            <div className="font-heading text-base tracking-widest">PROJECTS DONE</div>
-          </div>
-          <div className="text-center border-4 border-[var(--black)] px-8 py-6 bg-[var(--red)] text-[var(--white)] shadow-[6px_6px_0_var(--black)]">
-            <div className="font-heading text-5xl tracking-widest">48</div>
-            <div className="font-heading text-base tracking-widest">HAPPY CLIENTS</div>
-          </div>
-          <div className="text-center border-4 border-[var(--black)] px-8 py-6 bg-[var(--sky)] shadow-[6px_6px_0_var(--black)]">
-            <div className="font-heading text-5xl tracking-widest">7+</div>
-            <div className="font-heading text-base tracking-widest">YEARS EXP.</div>
-          </div>
+          {stats.map((s) => (
+            <div
+              key={s.label}
+              className="stat-card"
+              style={{ background: s.bg, color: s.color }}
+            >
+              <p
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 900 }}
+                className="text-5xl tracking-tight leading-none"
+              >
+                {s.n}
+              </p>
+              <p
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}
+                className="text-xs tracking-widest uppercase mt-1"
+              >
+                {s.label}
+              </p>
+            </div>
+          ))}
         </motion.div>
       </section>
     </>
