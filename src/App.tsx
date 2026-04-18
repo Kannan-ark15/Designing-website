@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import Cursor from './components/Cursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FeaturedWork from './components/FeaturedWork';
@@ -16,7 +15,6 @@ import Footer from './components/Footer';
 export default function App() {
   return (
     <>
-      <Cursor />
       <Navbar />
       <main>
         <Hero />

@@ -1,29 +1,34 @@
 import { motion } from 'motion/react';
 
+import elementalsTee from '@assets/Carpe_organiser_1776494843417.png';
+import headsTee from '@assets/KS_Heads_1776494843420.png';
+
 const projects = [
   {
     id: 1,
-    bg: '#D63031',
-    emoji: '👕',
-    badge: 'Featured Project',
+    img: elementalsTee,
+    imgAlt: 'Carpediem Elementals Organizer T-Shirt',
+    badge: 'Featured Merch',
     badgeBg: '#D63031',
-    title: 'Wave Culture\nTee Collection',
-    desc: 'A bold streetwear graphic collection inspired by surf culture and 80s pop aesthetics. Every line drawn with purpose — loud, proud, and screen-print ready.',
-    tools: ['Photoshop', 'Illustrator', 'Procreate'],
+    title: 'Elementals\nOrganizer Tee',
+    desc: 'A bold merch design for Carpediem — SASTRA\'s annual cultural fest. The "Elementals" theme across fire, water, earth & air was brought to life in this screen-print ready design.',
+    tools: ['Adobe Illustrator', 'Photoshop', 'Procreate'],
     btnBg: 'var(--ink)',
     btnText: 'var(--yellow)',
+    imgBg: '#6B1B1B',
   },
   {
     id: 2,
-    bg: '#2D3436',
-    emoji: '🗓️',
-    badge: 'New Release',
-    badgeBg: '#2D3436',
-    title: 'City Pulse\nPoster Series',
-    desc: 'Limited edition 18×24" screen-printed posters celebrating the energy of urban life. Bold type meets geometric illustration for a collector\'s piece.',
-    tools: ['InDesign', 'Illustrator'],
+    img: headsTee,
+    imgAlt: 'Kuruksastra Head of Informals T-Shirt',
+    badge: 'Featured Merch',
+    badgeBg: '#1D2A6B',
+    title: 'Kuruksastra\nHead Tee',
+    desc: 'Identity merch for SASTRA\'s flagship tech fest Kuruksastra 2023. Each tee was personalised with the wearer\'s agent code and role — a fusion of grunge typography and cinematic design.',
+    tools: ['Illustrator', 'Photoshop'],
     btnBg: 'var(--blue)',
     btnText: '#FFFFFF',
+    imgBg: '#1A2050',
   },
 ];
 
@@ -40,6 +45,7 @@ export default function ProjectSpotlight() {
           viewport={{ once: true }}
           className="max-w-5xl mx-auto mb-12 relative z-10"
         >
+          <span className="comic-tag red mb-4 inline-block">Deep Dive</span>
           <h2 className="section-title">
             <span>Project Spotlight</span>
           </h2>
@@ -55,13 +61,15 @@ export default function ProjectSpotlight() {
               className="grid grid-cols-1 md:grid-cols-2 border-[4px] border-[var(--ink)] bg-[var(--white)] shadow-[8px_8px_0_var(--ink)] overflow-hidden"
             >
               <div
-                className="flex items-center justify-center p-10 min-h-[280px] relative group"
-                style={{ backgroundColor: p.bg }}
+                className="flex items-center justify-center p-8 min-h-[300px] relative group overflow-hidden"
+                style={{ background: p.imgBg }}
               >
-                <div className="absolute inset-0 halftone-light pointer-events-none" />
-                <span className="text-[7rem] z-10 select-none transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
-                  {p.emoji}
-                </span>
+                <div className="absolute inset-0 halftone-light pointer-events-none opacity-50" />
+                <img
+                  src={p.img}
+                  alt={p.imgAlt}
+                  className="relative z-10 max-h-[320px] w-auto object-contain transition-transform duration-400 group-hover:scale-105"
+                />
               </div>
               <div className="p-8 md:p-10 flex flex-col justify-center">
                 <span
@@ -71,7 +79,7 @@ export default function ProjectSpotlight() {
                     background: p.badgeBg,
                     color: '#FFFFFF',
                   }}
-                  className="text-xs tracking-widest uppercase px-3 py-1 border-[2.5px] border-[var(--ink)] mb-5 w-fit -rotate-[1deg] inline-block"
+                  className="text-xs tracking-widest uppercase px-3 py-1.5 border-[2.5px] border-[var(--ink)] mb-5 w-fit -rotate-[1deg] inline-block shadow-[3px_3px_0_var(--ink)]"
                 >
                   {p.badge}
                 </span>
@@ -83,7 +91,7 @@ export default function ProjectSpotlight() {
                 </h3>
                 <p
                   style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}
-                  className="text-sm leading-relaxed text-gray-700 mb-5"
+                  className="text-sm leading-relaxed text-gray-600 mb-5"
                 >
                   {p.desc}
                 </p>
@@ -92,7 +100,7 @@ export default function ProjectSpotlight() {
                     <span
                       key={t}
                       style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}
-                      className="text-xs tracking-wide px-3 py-1 border-[2.5px] border-[var(--ink)] bg-[var(--sky)]"
+                      className="text-xs tracking-wide px-3 py-1.5 border-[2.5px] border-[var(--ink)] bg-[var(--sky)]"
                     >
                       {t}
                     </span>
@@ -105,7 +113,7 @@ export default function ProjectSpotlight() {
                     background: p.btnBg,
                     color: p.btnText,
                   }}
-                  className="text-sm tracking-wide uppercase px-7 py-3 border-[3px] border-[var(--ink)] w-fit transition-all duration-150 hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-[6px_6px_0_var(--ink)]"
+                  className="text-xs tracking-widest uppercase px-7 py-3 border-[3px] border-[var(--ink)] w-fit transition-all duration-150 hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-[6px_6px_0_var(--ink)]"
                 >
                   View Full Project →
                 </button>

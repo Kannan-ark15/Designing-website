@@ -1,99 +1,297 @@
-import { motion } from 'motion/react';
+import knightImg from '@assets/knight_1776494843419.jpg';
+import psImg from '@assets/ps_poster_final_1776494843421.png';
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen pt-[68px] grid grid-cols-1 md:grid-cols-2 bg-[var(--cream)] relative overflow-hidden border-b-[4px] border-[var(--ink)]"
+      style={{
+        height: 'calc(100vh - 68px)',
+        marginTop: '68px',
+        background: '#FAFAF8',
+        borderBottom: '4px solid #0A0A0A',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        overflow: 'hidden',
+      }}
     >
-      <div className="hero-bg absolute inset-0 halftone opacity-60 pointer-events-none" />
-
-      <div className="relative z-10 flex flex-col justify-center p-10 md:p-16 lg:p-20">
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="mb-6"
+      {/* LEFT COLUMN */}
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          padding: 'max(10%, 40px) 64px',
+          background: '#FAFAF8',
+          height: '100%',
+          boxSizing: 'border-box',
+          overflow: 'auto',
+        }}
+      >
+        <span
+          style={{
+            display: 'inline-block',
+            width: 'fit-content',
+            fontFamily: 'Poppins, sans-serif',
+            fontWeight: 700,
+            fontSize: '11px',
+            letterSpacing: '2px',
+            textTransform: 'uppercase',
+            padding: '4px 14px',
+            border: '2.5px solid #0A0A0A',
+            background: '#FDCB6E',
+            color: '#0A0A0A',
+            boxShadow: '3px 3px 0 #0A0A0A',
+            marginBottom: '24px',
+          }}
         >
-          <span className="comic-tag">Design Studio · 2025</span>
-        </motion.div>
+          Design Studio · 2025
+        </span>
 
-        <motion.div
-          initial={{ scale: 0.92, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 180, damping: 18, delay: 0.1 }}
-          className="speech-bubble mb-10"
+        <div
+          style={{
+            background: '#FFFFFF',
+            border: '4px solid #0A0A0A',
+            padding: '32px 40px',
+            boxShadow: '8px 8px 0 #0A0A0A',
+            marginBottom: '32px',
+          }}
         >
           <p
-            style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 900 }}
-            className="text-3xl md:text-4xl leading-snug tracking-tight text-[var(--ink)]"
+            style={{
+              fontFamily: 'Poppins, sans-serif',
+              fontWeight: 900,
+              fontSize: '34px',
+              lineHeight: 1.2,
+              color: '#0A0A0A',
+              margin: 0,
+            }}
           >
-            Hey! I'm a Designer who makes{' '}
-            <em className="not-italic text-[var(--red)]">Visuals</em>{' '}
-            absolutely{' '}
-            <em className="not-italic text-[var(--red)]">POP 💥</em>
+            Where{' '}
+            <em style={{ fontStyle: 'normal', color: '#D63031' }}>Bold Ideas</em>{' '}
+            meet{' '}
+            <em style={{ fontStyle: 'normal', color: '#D63031' }}>Stunning Visuals</em> 💥
           </p>
-        </motion.div>
+          <p
+            style={{
+              fontFamily: 'Poppins, sans-serif',
+              fontWeight: 400,
+              fontSize: '14px',
+              color: '#6B7280',
+              marginTop: '12px',
+              lineHeight: 1.6,
+              marginBottom: 0,
+            }}
+          >
+            Event posters, merch design, brand identity — crafted with precision and personality.
+          </p>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.25 }}
-          className="flex gap-2 mb-8 flex-wrap"
-        >
-          <span className="comic-tag">Posters</span>
-          <span className="comic-tag red">T-Shirts</span>
-          <span className="comic-tag blue">Branding</span>
-        </motion.div>
+        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '24px' }}>
+          {[
+            { label: 'Posters', bg: '#FDCB6E', fg: '#0A0A0A' },
+            { label: 'Merch Design', bg: '#D63031', fg: '#FFFFFF' },
+            { label: 'Branding', bg: '#2D3436', fg: '#FFFFFF' },
+          ].map((t) => (
+            <span
+              key={t.label}
+              style={{
+                fontFamily: 'Poppins, sans-serif',
+                fontWeight: 700,
+                fontSize: '11px',
+                letterSpacing: '2px',
+                textTransform: 'uppercase',
+                padding: '4px 14px',
+                border: '2.5px solid #0A0A0A',
+                background: t.bg,
+                color: t.fg,
+                boxShadow: '3px 3px 0 #0A0A0A',
+              }}
+            >
+              {t.label}
+            </span>
+          ))}
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35 }}
-          className="flex gap-4 flex-wrap"
-        >
-          <a href="#featured" className="comic-btn primary">
+        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '40px' }}>
+          <a
+            href="#featured"
+            style={{
+              display: 'inline-block',
+              fontFamily: 'Poppins, sans-serif',
+              fontWeight: 800,
+              fontSize: '13px',
+              letterSpacing: '2px',
+              textTransform: 'uppercase',
+              padding: '14px 32px',
+              border: '4px solid #0A0A0A',
+              background: '#0A0A0A',
+              color: '#FDCB6E',
+              textDecoration: 'none',
+              boxShadow: '5px 5px 0 #D63031',
+            }}
+          >
             View Work ↓
           </a>
-          <a href="#contact" className="comic-btn secondary">
+          <a
+            href="#contact"
+            style={{
+              display: 'inline-block',
+              fontFamily: 'Poppins, sans-serif',
+              fontWeight: 800,
+              fontSize: '13px',
+              letterSpacing: '2px',
+              textTransform: 'uppercase',
+              padding: '14px 32px',
+              border: '4px solid #0A0A0A',
+              background: '#D63031',
+              color: '#FFFFFF',
+              textDecoration: 'none',
+              boxShadow: '5px 5px 0 #0A0A0A',
+            }}
+          >
             Hire Me
           </a>
-        </motion.div>
-      </div>
+        </div>
 
-      <div className="relative z-10 hidden md:flex items-center justify-center p-12">
-        <div className="hero-poster relative">
-          <div
-            className="w-[270px] h-[360px] bg-[var(--red)] border-[4px] border-[var(--ink)] shadow-[10px_10px_0_var(--ink)] flex flex-col overflow-hidden relative"
-          >
-            <div className="flex-1 bg-[var(--yellow)] m-3 border-[3px] border-[var(--ink)] flex flex-col items-center justify-center relative overflow-hidden halftone-yellow">
-              <div className="text-[4.5rem] z-10 select-none">🎨</div>
+        <div style={{ display: 'flex', gap: '40px' }}>
+          {[
+            { n: '120+', l: 'Projects' },
+            { n: '48', l: 'Clients' },
+            { n: '7+', l: 'Years' },
+          ].map((s) => (
+            <div key={s.l}>
               <p
-                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 900 }}
-                className="text-xl tracking-tight text-[var(--ink)] z-10 mt-2 text-center leading-tight"
+                style={{
+                  fontFamily: 'Poppins, sans-serif',
+                  fontWeight: 900,
+                  fontSize: '28px',
+                  color: '#0A0A0A',
+                  margin: 0,
+                  lineHeight: 1,
+                }}
               >
-                Ultra Bold<br />Design
+                {s.n}
+              </p>
+              <p
+                style={{
+                  fontFamily: 'Poppins, sans-serif',
+                  fontWeight: 500,
+                  fontSize: '12px',
+                  color: '#6B7280',
+                  marginTop: '4px',
+                  marginBottom: 0,
+                }}
+              >
+                {s.l}
               </p>
             </div>
-            <div
-              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}
-              className="px-3 py-2 text-sm text-[var(--white)] text-center tracking-widest uppercase"
+          ))}
+        </div>
+      </div>
+
+      {/* RIGHT COLUMN */}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateRows: '1fr 1fr',
+          borderLeft: '4px solid #0A0A0A',
+          height: '100%',
+        }}
+      >
+        <div style={{ overflow: 'hidden', borderBottom: '4px solid #0A0A0A', position: 'relative' }}>
+          <img
+            src={knightImg}
+            alt="Batman vs Moon Knight"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          />
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%)',
+              pointerEvents: 'none',
+            }}
+          />
+          <div style={{ position: 'absolute', bottom: '20px', left: '20px' }}>
+            <span
+              style={{
+                display: 'inline-block',
+                fontFamily: 'Poppins, sans-serif',
+                fontWeight: 700,
+                fontSize: '11px',
+                letterSpacing: '2px',
+                textTransform: 'uppercase',
+                padding: '4px 14px',
+                border: '2.5px solid #0A0A0A',
+                background: '#74B9FF',
+                color: '#0A0A0A',
+                boxShadow: '3px 3px 0 #0A0A0A',
+                marginBottom: '6px',
+              }}
             >
-              ★ Original Print ★
-            </div>
+              Digital Art
+            </span>
+            <p
+              style={{
+                fontFamily: 'Poppins, sans-serif',
+                fontWeight: 800,
+                fontSize: '18px',
+                color: '#FFFFFF',
+                margin: 0,
+                textShadow: '2px 2px 0 rgba(0,0,0,0.5)',
+              }}
+            >
+              Batman vs Moon Knight
+            </p>
           </div>
-          <span
-            style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800 }}
-            className="absolute -top-3 -right-3 text-xs tracking-wider bg-[var(--sky)] border-[3px] border-[var(--ink)] px-2.5 py-1 shadow-[3px_3px_0_var(--ink)] text-[var(--ink)] rotate-[10deg] uppercase"
-          >
-            New!
-          </span>
-          <span
-            style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800 }}
-            className="absolute bottom-5 -left-4 text-xs tracking-wider bg-[var(--yellow)] border-[3px] border-[var(--ink)] px-2.5 py-1 shadow-[3px_3px_0_var(--ink)] text-[var(--ink)] -rotate-[6deg] uppercase"
-          >
-            Limited
-          </span>
+        </div>
+        <div style={{ overflow: 'hidden', position: 'relative' }}>
+          <img
+            src={psImg}
+            alt="Ponniyin Selvan"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          />
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%)',
+              pointerEvents: 'none',
+            }}
+          />
+          <div style={{ position: 'absolute', bottom: '20px', left: '20px' }}>
+            <span
+              style={{
+                display: 'inline-block',
+                fontFamily: 'Poppins, sans-serif',
+                fontWeight: 700,
+                fontSize: '11px',
+                letterSpacing: '2px',
+                textTransform: 'uppercase',
+                padding: '4px 14px',
+                border: '2.5px solid #0A0A0A',
+                background: '#FDCB6E',
+                color: '#0A0A0A',
+                boxShadow: '3px 3px 0 #0A0A0A',
+                marginBottom: '6px',
+              }}
+            >
+              Movie Poster
+            </span>
+            <p
+              style={{
+                fontFamily: 'Poppins, sans-serif',
+                fontWeight: 800,
+                fontSize: '18px',
+                color: '#FFFFFF',
+                margin: 0,
+                textShadow: '2px 2px 0 rgba(0,0,0,0.5)',
+              }}
+            >
+              Ponniyin Selvan
+            </p>
+          </div>
         </div>
       </div>
     </section>
