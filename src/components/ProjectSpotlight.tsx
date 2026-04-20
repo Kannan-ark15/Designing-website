@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 
-import elementalsTee from '@assets/Carpe_organiser_1776494843417.png';
-import headsTee from '@assets/KS_Heads_1776494843420.png';
+import elementalsTee from '@assets/Carpe_organiser_1776494843417.jpg';
+import headsTee from '@assets/KS_Heads_1776494843420.jpg';
 
 const projects = [
   {
@@ -68,6 +68,8 @@ export default function ProjectSpotlight() {
                 <img
                   src={p.img}
                   alt={p.imgAlt}
+                  loading="lazy"
+                  decoding="async"
                   className="relative z-10 max-h-[320px] w-auto object-contain transition-transform duration-400 group-hover:scale-105"
                 />
               </div>

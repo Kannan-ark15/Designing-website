@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 
-import relics from '@assets/relics_1776494843422.png';
-import treasureQuest from '@assets/event2_mark2_1776494843418.png';
+import relics from '@assets/relics_1776494843422.jpg';
+import treasureQuest from '@assets/event2_mark2_1776494843418.jpg';
 import recruitment from '@assets/Recruitment_Poster_1776494843422.jpg';
 
-import ksRed from '@assets/KS_Sample_1_1776494843419.png';
-import carpe4th from '@assets/Carpe_4thYears_1776494843417.png';
-import ksGreen from '@assets/KS_Sample_2_1776494843420.png';
+import ksRed from '@assets/KS_Sample_1_1776494843419.jpg';
+import carpe4th from '@assets/Carpe_4thYears_1776494843417.jpg';
+import ksGreen from '@assets/KS_Sample_2_1776494843420.jpg';
 
 import knight from '@assets/knight_1776494843419.jpg';
-import ps from '@assets/ps_poster_final_1776494843421.png';
-import technoSample from '@assets/sample_1776494843422.png';
+import ps from '@assets/ps_poster_final_1776494843421.jpg';
+import technoSample from '@assets/sample_1776494843422.jpg';
 
 const categories = {
   posters: [
@@ -106,6 +106,8 @@ export default function Categories() {
                   <img
                     src={item.img}
                     alt={item.name}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>

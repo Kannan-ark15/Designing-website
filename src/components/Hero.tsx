@@ -1,10 +1,11 @@
 import knightImg from '@assets/knight_1776494843419.jpg';
-import psImg from '@assets/ps_poster_final_1776494843421.png';
+import psImg from '@assets/ps_poster_final_1776494843421.jpg';
 
 export default function Hero() {
   return (
     <section
       id="hero"
+      className="hero-layout"
       style={{
         height: 'calc(100vh - 68px)',
         marginTop: '68px',
@@ -17,6 +18,7 @@ export default function Hero() {
     >
       {/* LEFT COLUMN */}
       <div
+        className="hero-copy-column"
         style={{
           display: 'flex',
           flexDirection: 'column',
@@ -45,10 +47,11 @@ export default function Hero() {
             marginBottom: '24px',
           }}
         >
-          Design Studio · 2025
+          Design Studio - 2026
         </span>
 
         <div
+          className="hero-copy-panel"
           style={{
             background: '#FFFFFF',
             border: '4px solid #0A0A0A',
@@ -58,6 +61,7 @@ export default function Hero() {
           }}
         >
           <p
+            className="hero-headline"
             style={{
               fontFamily: 'Poppins, sans-serif',
               fontWeight: 900,
@@ -73,6 +77,7 @@ export default function Hero() {
             <em style={{ fontStyle: 'normal', color: '#D63031' }}>Stunning Visuals</em> 💥
           </p>
           <p
+            className="hero-subtext"
             style={{
               fontFamily: 'Poppins, sans-serif',
               fontWeight: 400,
@@ -87,7 +92,7 @@ export default function Hero() {
           </p>
         </div>
 
-        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '24px' }}>
+        <div className="hero-tags" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '24px' }}>
           {[
             { label: 'Posters', bg: '#FDCB6E', fg: '#0A0A0A' },
             { label: 'Merch Design', bg: '#D63031', fg: '#FFFFFF' },
@@ -113,7 +118,7 @@ export default function Hero() {
           ))}
         </div>
 
-        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '40px' }}>
+        <div className="hero-actions" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '40px' }}>
           <a
             href="#featured"
             style={{
@@ -154,11 +159,10 @@ export default function Hero() {
           </a>
         </div>
 
-        <div style={{ display: 'flex', gap: '40px' }}>
+        <div className="hero-stats" style={{ display: 'flex', gap: '40px' }}>
           {[
             { n: '120+', l: 'Projects' },
             { n: '48', l: 'Clients' },
-            { n: '7+', l: 'Years' },
           ].map((s) => (
             <div key={s.l}>
               <p
@@ -192,6 +196,7 @@ export default function Hero() {
 
       {/* RIGHT COLUMN */}
       <div
+        className="hero-media-column"
         style={{
           display: 'grid',
           gridTemplateRows: '1fr 1fr',
@@ -199,10 +204,13 @@ export default function Hero() {
           height: '100%',
         }}
       >
-        <div style={{ overflow: 'hidden', borderBottom: '4px solid #0A0A0A', position: 'relative' }}>
+        <div className="hero-media-block" style={{ overflow: 'hidden', borderBottom: '4px solid #0A0A0A', position: 'relative' }}>
           <img
             src={knightImg}
             alt="Batman vs Moon Knight"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
           <div
@@ -213,7 +221,7 @@ export default function Hero() {
               pointerEvents: 'none',
             }}
           />
-          <div style={{ position: 'absolute', bottom: '20px', left: '20px' }}>
+          <div className="hero-media-caption" style={{ position: 'absolute', bottom: '20px', left: '20px' }}>
             <span
               style={{
                 display: 'inline-block',
@@ -233,6 +241,7 @@ export default function Hero() {
               Digital Art
             </span>
             <p
+              className="hero-media-title"
               style={{
                 fontFamily: 'Poppins, sans-serif',
                 fontWeight: 800,
@@ -246,10 +255,13 @@ export default function Hero() {
             </p>
           </div>
         </div>
-        <div style={{ overflow: 'hidden', position: 'relative' }}>
+        <div className="hero-media-block" style={{ overflow: 'hidden', position: 'relative' }}>
           <img
             src={psImg}
             alt="Ponniyin Selvan"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
           <div
@@ -260,7 +272,7 @@ export default function Hero() {
               pointerEvents: 'none',
             }}
           />
-          <div style={{ position: 'absolute', bottom: '20px', left: '20px' }}>
+          <div className="hero-media-caption" style={{ position: 'absolute', bottom: '20px', left: '20px' }}>
             <span
               style={{
                 display: 'inline-block',
@@ -280,6 +292,7 @@ export default function Hero() {
               Movie Poster
             </span>
             <p
+              className="hero-media-title"
               style={{
                 fontFamily: 'Poppins, sans-serif',
                 fontWeight: 800,

@@ -8,7 +8,7 @@ export default function Footer() {
             style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 900 }}
             className="text-lg tracking-tight"
           >
-            POW<span className="text-[var(--yellow)]">!</span> DESIGN
+            Design Studio
           </span>
         </div>
 
@@ -16,7 +16,7 @@ export default function Footer() {
           style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}
           className="text-xs tracking-wide text-white/60"
         >
-          © 2025 POW! Design — Made with 💥 and lots of coffee
+          Copyright 2026 Design Studio - Made with creativity and lots of coffee
         </p>
 
         <div className="flex gap-4">

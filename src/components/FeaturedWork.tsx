@@ -1,10 +1,10 @@
 import { motion } from 'motion/react';
 
-import flagwars from '@assets/flagwars_1776494843418.png';
-import carnival from '@assets/carnival_final_1776494843415.png';
-import sherlock from '@assets/sherlock_1776494843423.png';
-import moneyball from '@assets/moneyball_1776494843420.png';
-import photographia from '@assets/photographia_1776494843421.png';
+import flagwars from '@assets/flagwars_1776494843418.jpg';
+import carnival from '@assets/carnival_final_1776494843415.jpg';
+import sherlock from '@assets/sherlock_1776494843423.jpg';
+import moneyball from '@assets/moneyball_1776494843420.jpg';
+import photographia from '@assets/photographia_1776494843421.jpg';
 import sos from '@assets/sos_1776494843423.jpg';
 
 const panels = [
@@ -12,7 +12,7 @@ const panels = [
   { id: 2, img: carnival,     title: 'Carnival Games', sub: 'Event Poster · Informals',   pop: 'POP!' },
   { id: 3, img: sherlock,     title: 'Sherlock',       sub: 'Event Poster · Technotainment', pop: 'WOW!' },
   { id: 4, img: moneyball,    title: 'Money Ball',     sub: 'Event Poster · Utsav',       pop: 'BOOM!' },
-  { id: 5, img: photographia, title: 'Photographia',   sub: 'Photography Competition',    pop: 'POW!' },
+  { id: 5, img: photographia, title: 'Photographia',   sub: 'Photography Competition',    pop: 'BANG!' },
   { id: 6, img: sos,          title: 'Sovereign of Spies', sub: 'Event Poster · Techno Informals', pop: 'YOW!' },
 ];
 
@@ -55,6 +55,8 @@ export default function FeaturedWork() {
                 <img
                   src={panel.img}
                   alt={panel.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />

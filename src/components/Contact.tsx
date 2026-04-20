@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import relics from '@assets/relics_1776494843422.png';
+import relics from '@assets/relics_1776494843422.jpg';
 
 const socials = [
   { label: 'Twitter',   icon: '𝕏' },
@@ -20,6 +20,8 @@ export default function Contact() {
             <img
               src={relics}
               alt="Race for the Relics event poster"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[var(--ink)]/80 lg:block hidden" />

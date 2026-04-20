@@ -1,18 +1,17 @@
 import { motion } from 'motion/react';
-import carpeParticipant from '@assets/Carpe_participant_1776494843418.png';
-import moneyball from '@assets/moneyball_1776494843420.png';
+import carpeParticipant from '@assets/Carpe_participant_1776494843418.jpg';
+import moneyball from '@assets/moneyball_1776494843420.jpg';
 
 const story = [
-  { n: '01', icon: '👶', bg: 'var(--sky)', color: 'var(--ink)',  title: 'The Origin',   text: 'Grew up with markers in hand and walls as canvases. Fell in love with color before I could spell "design."' },
-  { n: '02', icon: '🎓', bg: 'var(--yellow)', color: 'var(--ink)', title: 'The Training', text: 'Studied Graphic Design and never stopped. Mastered Illustrator, Photoshop, and the art of the perfect typeface pairing.' },
-  { n: '03', icon: '💥', bg: 'var(--red)', color: '#FFFFFF',    title: 'The Mission',  text: 'Making brands impossible to ignore. Every project is a visual punch — bold, memorable, built to last.' },
-  { n: '04', icon: '🚀', bg: 'var(--blue)', color: '#FFFFFF',   title: "What's Next",  text: "Dropping new collections, collabs, and client projects monthly. The studio never sleeps. Let's build something legendary." },
+  { n: '01',  bg: 'var(--sky)', color: 'var(--ink)',  title: 'The Origin',   text: 'Grew up with markers in hand and walls as canvases. Fell in love with color before I could spell "design."' },
+  { n: '02',  bg: 'var(--yellow)', color: 'var(--ink)', title: 'The Training', text: 'Studied Graphic Design and never stopped. Mastered Illustrator, Photoshop, and the art of the perfect typeface pairing.' },
+  { n: '03',  bg: 'var(--red)', color: '#FFFFFF',    title: 'The Mission',  text: 'Making brands impossible to ignore. Every project is a visual punch — bold, memorable, built to last.' },
+  { n: '04',  bg: 'var(--blue)', color: '#FFFFFF',   title: "What's Next",  text: "Dropping new collections, collabs, and client projects monthly. The studio never sleeps. Let's build something legendary." },
 ];
 
 const stats = [
   { n: '120+', label: 'Projects Done', bg: 'var(--yellow)', color: 'var(--ink)' },
   { n: '48',   label: 'Happy Clients', bg: 'var(--red)',    color: '#FFFFFF' },
-  { n: '7+',   label: 'Years Exp.',    bg: 'var(--sky)',    color: 'var(--ink)' },
 ];
 
 export default function About() {
@@ -51,6 +50,8 @@ export default function About() {
                 <img
                   src={carpeParticipant}
                   alt="Carpediem Participant T-shirt"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
@@ -120,6 +121,8 @@ export default function About() {
               <img
                 src={moneyball}
                 alt="Money Ball event poster"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/40" />

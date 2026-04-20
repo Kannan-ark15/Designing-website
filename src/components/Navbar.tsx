@@ -1,16 +1,13 @@
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--white)] border-b-[4px] border-[var(--ink)] flex items-center justify-between px-6 md:px-12 h-[68px]">
-      <a
-        href="#"
-        className="flex items-center gap-2 no-underline group"
-      >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--white)] border-b-[4px] border-[var(--ink)] flex items-center justify-between px-4 sm:px-6 md:px-12 h-[68px]">
+      <a href="#" className="flex items-center gap-2 no-underline group">
         <span className="inline-block w-8 h-8 bg-[var(--red)] border-2 border-[var(--ink)] rotate-[8deg] group-hover:rotate-[-4deg] transition-transform duration-200" />
         <span
           style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 900 }}
-          className="text-xl tracking-tight text-[var(--ink)] leading-none"
+          className="text-lg sm:text-xl tracking-tight text-[var(--ink)] leading-none whitespace-nowrap"
         >
-          POW<span className="text-[var(--red)]">!</span> DESIGN
+          Design Studio
         </span>
       </a>
 
@@ -35,8 +32,12 @@ export default function Navbar() {
 
       <a
         href="#contact"
-        className="comic-btn primary text-sm"
+        style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800 }}
+        className="sm:hidden text-[11px] tracking-widest uppercase px-3 py-2 border-[3px] border-[var(--ink)] bg-[var(--ink)] text-[var(--yellow)] no-underline"
       >
+        Hire Me →
+      </a>
+      <a href="#contact" className="hidden sm:inline-block comic-btn primary text-sm">
         Hire Me →
       </a>
     </nav>

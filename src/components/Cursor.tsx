@@ -16,7 +16,7 @@ export default function Cursor() {
       // Sound FX label
       const fx = document.createElement('div');
       fx.className = 'sfx';
-      const words = ['POW!', 'ZAP!', 'BOOM!', 'WOW!', 'POP!', 'BAM!'];
+      const words = ['ZAP!', 'BOOM!', 'WOW!', 'POP!', 'BAM!'];
       fx.textContent = words[Math.floor(Math.random() * words.length)];
       fx.style.left = `${e.clientX - 20}px`;
       fx.style.top = `${e.clientY - 30}px`;
