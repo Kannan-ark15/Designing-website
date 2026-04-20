@@ -35,10 +35,14 @@ export default function Navbar() {
         style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800 }}
         className="sm:hidden text-[11px] tracking-widest uppercase px-3 py-2 border-[3px] border-[var(--ink)] bg-[var(--ink)] text-[var(--yellow)] no-underline"
       >
-        Hire Me →
+        Hire Me -&gt;
       </a>
-      <a href="#contact" className="hidden sm:inline-block comic-btn primary text-sm">
-        Hire Me →
+      <a
+        href="#contact"
+        style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800 }}
+        className="hidden sm:inline-block text-sm tracking-widest uppercase px-7 py-3 border-[4px] border-[var(--ink)] bg-[var(--ink)] text-[var(--yellow)] no-underline shadow-[5px_5px_0_var(--ink)] hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-[8px_8px_0_var(--ink)] transition-all duration-150"
+      >
+        Hire Me -&gt;
       </a>
     </nav>
   );

@@ -3,10 +3,10 @@ import carpeParticipant from '@assets/Carpe_participant_1776494843418.jpg';
 import moneyball from '@assets/moneyball_1776494843420.jpg';
 
 const story = [
-  { n: '01',  bg: 'var(--sky)', color: 'var(--ink)',  title: 'The Origin',   text: 'Grew up with markers in hand and walls as canvases. Fell in love with color before I could spell "design."' },
-  { n: '02',  bg: 'var(--yellow)', color: 'var(--ink)', title: 'The Training', text: 'Studied Graphic Design and never stopped. Mastered Illustrator, Photoshop, and the art of the perfect typeface pairing.' },
-  { n: '03',  bg: 'var(--red)', color: '#FFFFFF',    title: 'The Mission',  text: 'Making brands impossible to ignore. Every project is a visual punch — bold, memorable, built to last.' },
-  { n: '04',  bg: 'var(--blue)', color: '#FFFFFF',   title: "What's Next",  text: "Dropping new collections, collabs, and client projects monthly. The studio never sleeps. Let's build something legendary." },
+  { n: '01', icon: 'O', bg: 'var(--sky)', color: 'var(--ink)',  title: 'The Origin',   text: 'Grew up with markers in hand and walls as canvases. Fell in love with color before I could spell "design."' },
+  { n: '02', icon: 'T', bg: 'var(--yellow)', color: 'var(--ink)', title: 'The Training', text: 'Studied Graphic Design and never stopped. Mastered Illustrator, Photoshop, and the art of the perfect typeface pairing.' },
+  { n: '03', icon: 'M', bg: 'var(--red)', color: '#FFFFFF',    title: 'The Mission',  text: 'Making brands impossible to ignore. Every project is a visual punch — bold, memorable, built to last.' },
+  { n: '04', icon: 'N', bg: 'var(--blue)', color: '#FFFFFF',   title: "What's Next",  text: "Dropping new collections, collabs, and client projects monthly. The studio never sleeps. Let's build something legendary." },
 ];
 
 const stats = [
